@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+Editar Alumno
+{% endblock %}
+
+{% block principal %}
+<div class="alumno-container">
+    <h2>Actualizar Alumno</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit" class="btn btn-form">Actualizar</button>
+    </form>
+    <a href="{% url 'listar' %}" class="btn btn-inicio">Volver al Inicio</a>
+</div>
+{% endblock %}
