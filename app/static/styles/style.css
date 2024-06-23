@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+body {
+  margin: 0px;
+  background-color: #f6f6f6;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(245, 197, 129);
+  height: 4rem;
+  width: 100%;
+  font-family: "Lemon", serif;
+  font-size: 18px;
+}
+
+nav h1 {
+  text-align: center;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.alumno-container {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.alumno-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.alumno-table th,
+.alumno-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.alumno-table thead tr td,
+.alumno-table th {
+  font-weight: 700;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(241, 225, 202);
+}
+
+.btn {
+  padding: 12px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  transition: all 0.1s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+.btn::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: width 200ms ease-in-out;
+  display: inline-block;
+}
+
+.btn-form::before {
+  background-color: #3faa0e;
+}
+
+.btn-inicio::before {
+  background-color: #c6910b;
+}
+
+.btn-editar::before {
+  background-color: #215bd8;
+}
+
+.btn-eliminar::before {
+  background-color: #d82121;
+}
+
+.btn-agregar::before {
+  background-color: #c6910b;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn-editar {
+  background-color: #254486;
+}
+
+.btn-eliminar {
+  background-color: #862525;
+}
+
+.btn-agregar {
+  margin-top: 10px;
+  background-color: #b16d00;
+}
+
+.btn-inicio {
+  background-color: #b16d00;
+  padding: 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-form {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+  width: 100%;
+  background-color: #228601;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+form {
+  width: 400px;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgb(146, 222, 245);
+  box-shadow: 0 0 5px rgb(202, 232, 241);
+}

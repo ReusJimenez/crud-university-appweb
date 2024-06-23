@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+EDUTEC
+{% endblock %}
+
+{% block principal %}
+<div class="alumno-container">
+    <h2>Listado actual de alumnos</h2>
+    <table class="alumno-table">
+        <thead>
+            <tr>
+                <th {% if ordering == 'codigo' %}class="active"{% endif %}><a href="?ordering=codigo">Código de Estudiante</a></th>
+                <th {% if ordering == 'nombres' %}class="active"{% endif %}><a href="?ordering=nombres">Nombres</a></th>
+                <th {% if ordering == 'apellidos' %}class="active"{% endif %}><a href="?ordering=apellidos">Apellidos</a></th>
+                <th {% if ordering == 'fecha_nacimiento' %}class="active"{% endif %}><a href="?ordering=fecha_nacimiento">Fecha de Nacimiento</a></th>
+                <th {% if ordering == 'edad' %}class="active"{% endif %}><a href="?ordering=edad">Edad</a></th>
+                <th {% if ordering == 'email' %}class="active"{% endif %}><a href="?ordering=email">Email</a></th>
+                <th {% if ordering == 'telefono' %}class="active"{% endif %}><a href="?ordering=telefono">Teléfono</a></th>
+                <th {% if ordering == 'estado_estudio' %}class="active"{% endif %}><a href="?ordering=estado_estudio">Estado de Estudio</a></th>
+                <th colspan="2">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos %}
+            <tr>
+                <td>{{ alumno.codigo }}</td>
+                <td>{{ alumno.nombres }}</td>
+                <td>{{ alumno.apellidos }}</td>
+                <td>{{ alumno.fecha_nacimiento }}</td>
+                <td>{{ alumno.edad }}</td>
+                <td>{{ alumno.email }}</td>
+                <td>{{ alumno.telefono }}</td>
+                <td>{% if alumno.estado_estudio %} Activo {% else %} Inactivo {% endif %}</td>
+                <td><a href="editar/{{ alumno.codigo }}" class="btn btn-editar">Editar</a></td>
+                <td><a href="eliminar/{{ alumno.codigo }}"
+                        onclick="return confirm('¿Está seguro que quiere eliminar los datos del alumno?')"
+                        class="btn btn-eliminar">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'agregar' %}" class="btn btn-agregar">Agregar alumno</a>
+</div>
+{% endblock %}
