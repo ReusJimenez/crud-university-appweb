@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import date
 
-# Create your models here.
 class Alumno(models.Model):
     codigo = models.CharField(max_length=15, primary_key=True)
     nombres = models.CharField(max_length=50)

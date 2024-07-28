@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from app.models import Alumno
 from app.forms import AlumnoForm
 
-# Create your views here.
 def listar(request):
     ordering = request.GET.get('ordering', 'codigo')
     allowed_ordering = ['codigo', 'nombres', 'apellidos', 'fecha_nacimiento', 'edad', 'email', 'telefono', 'estado_estudio']
